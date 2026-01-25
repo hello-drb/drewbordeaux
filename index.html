@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drew Bordeaux</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              /* 
+               * ==========================================
+               * PROFESSIONAL EARTHY PALETTE
+               * ==========================================
+               */
+              paper: '#E5D8C8',   // MAIN BG: Warm Bone
+              sand: '#D6C8B8',    // SECONDARY BG: Darker Bone / Borders
+              
+              charcoal: '#23201D', // DARK SECTIONS: Soft Warm Black
+              ink: '#181615',     // MAIN TEXT: Soft Black
+              
+              stone: '#5E5852',   // MUTED TEXT: Warm Grey
+              white: '#F2EBE3',   // LIGHT TEXT: Off-white (for dark bgs)
+              
+              // Accents
+              rust: '#9F3E24',    // PRIMARY ACCENT: Deep Terracotta
+              spruce: '#2F4A42',  // SECONDARY ACCENT: Deep Organic Green (Replaces Moss/Turquoise)
+              
+              // Legacy/Utility
+              black: '#000000',
+            },
+            fontFamily: {
+              // Reverted to Anton for that blocky, modern rock feel
+              display: ['Anton', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              serif: ['EB Garamond', 'serif'], // kept only for small italic accents
+            },
+            backgroundImage: {
+              'noise': "url('https://grainy-gradients.vercel.app/noise.svg')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #E5D8C8; /* paper */
+        color: #181615; /* ink */
+        overflow-x: hidden;
+      }
+      /* Cinematic Grain Overlay */
+      .bg-grain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.12; 
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        mix-blend-mode: multiply;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .animate-enter {
+        animation: enter 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+      }
+      @keyframes enter {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      ::selection {
+        background-color: #9F3E24; /* Rust */
+        color: #F2EBE3; /* White */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="bg-grain"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
