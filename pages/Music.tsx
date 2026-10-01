@@ -106,7 +106,7 @@ const Music: React.FC = () => {
             {/* Right: Text Content */}
             <div className="space-y-10">
                 <div className="flex items-center gap-4 mb-2">
-                    <span className="text-rust text-xs uppercase tracking-[0.3em] font-bold">Upcoming Release</span>
+                    <span className="text-rust text-xs uppercase tracking-[0.3em] font-bold">Out Now</span>
                     <div className="h-px bg-rust w-12"></div>
                 </div>
 
@@ -136,9 +136,14 @@ const Music: React.FC = () => {
                 </div>
 
                 <div className="pt-8">
-                     <Button href="#" variant="outline" className="border-white/20 hover:bg-rust hover:border-rust text-white font-bold">
-                        Get Notified
-                     </Button>
+                     <div className="flex flex-wrap gap-4">
+                        <Button href="https://open.spotify.com/album/1v9uoONPLuYwcpbAq6WFGn" variant="primary">
+                           Listen on Spotify
+                        </Button>
+                        <Button href="https://music.apple.com/us/album/dust-between-galaxies/6786445061" variant="outline" className="border-white/20 hover:bg-rust hover:border-rust text-white font-bold">
+                           Apple Music
+                        </Button>
+                     </div>
                 </div>
             </div>
 
