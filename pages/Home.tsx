@@ -217,7 +217,7 @@ const Home: React.FC = () => {
             <div className="text-center md:text-left space-y-8">
                 <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
                     <div className="w-12 h-[1px] bg-rust"></div>
-                    <span className="text-rust text-xs uppercase tracking-[0.3em] font-bold">Upcoming Release</span>
+                    <span className="text-rust text-xs uppercase tracking-[0.3em] font-bold">Out Now</span>
                 </div>
                 
                 <h2 className="font-display uppercase text-6xl md:text-8xl text-white tracking-wide leading-[0.9]">
@@ -225,7 +225,8 @@ const Home: React.FC = () => {
                 </h2>
                 
                 <div className="pt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <Button href="#" variant="outline">Pre-Save</Button>
+                    <Button href="https://open.spotify.com/album/1v9uoONPLuYwcpbAq6WFGn" variant="primary">Listen on Spotify</Button>
+                    <Button href="https://music.apple.com/us/album/dust-between-galaxies/6786445061" variant="outline">Apple Music</Button>
                 </div>
             </div>
          </div>
