@@ -240,3 +240,7 @@ figure.photo figcaption { color: var(--soft); margin-top: 12px; }
 .cover-figure { margin: 0; }
 .cover-figure img { width: 100%; height: auto; }
 .cover-figure figcaption { color: var(--soft); margin-top: 26px; }
+
+/* Spotify player under the latest record */
+.listen-player { margin-top: 64px; }
+.listen-player iframe { display: block; border: 0; border-radius: 12px; }
