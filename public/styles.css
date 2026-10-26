@@ -123,7 +123,7 @@
   .closing p { max-width: 30em; margin-bottom: 34px; font-size: 21px; }
 
   footer { border-top: 1px solid var(--lines); padding: 56px 0 72px; color: var(--soft); }
-  footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
   footer a { text-decoration: none; display: block; margin-bottom: 10px; }
   footer a:hover { color: var(--text); }
   footer .wordmark { color: var(--text); font-size: 18px; margin-bottom: 12px; display: inline-block; }
@@ -244,3 +244,9 @@ figure.photo figcaption { color: var(--soft); margin-top: 12px; }
 /* Spotify player under the latest record */
 .listen-player { margin-top: 64px; }
 .listen-player iframe { display: block; border: 0; border-radius: 12px; }
+
+/* Earlier record links under the player */
+.also { margin-top: 20px; color: var(--soft); line-height: 2; }
+.also a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--lines); }
+.also a:hover { color: var(--accent-text); }
+.also em { font-style: italic; }
