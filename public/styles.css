@@ -235,3 +235,8 @@ figure.photo figcaption { color: var(--soft); margin-top: 12px; }
   .menu-open header nav { display: flex; position: fixed; inset: 0; z-index: 80; background: var(--ground); flex-direction: column; justify-content: center; align-items: center; gap: 30px; font-size: 15px; }
   .menu-open { overflow: hidden; }
 }
+
+/* Album cover inside the Visual identity feature */
+.cover-figure { margin: 0; }
+.cover-figure img { width: 100%; height: auto; }
+.cover-figure figcaption { color: var(--soft); margin-top: 26px; }
