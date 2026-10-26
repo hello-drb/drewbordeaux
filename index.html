@@ -1,114 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drew Bordeaux</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind with Typography Plugin -->
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              /* 
-               * ==========================================
-               * PROFESSIONAL EARTHY PALETTE
-               * ==========================================
-               */
-              paper: '#E5D8C8',   // MAIN BG: Warm Bone
-              sand: '#D6C8B8',    // SECONDARY BG: Darker Bone / Borders
-              
-              charcoal: '#23201D', // DARK SECTIONS: Soft Warm Black
-              ink: '#181615',     // MAIN TEXT: Soft Black
-              
-              stone: '#5E5852',   // MUTED TEXT: Warm Grey
-              white: '#F2EBE3',   // LIGHT TEXT: Off-white (for dark bgs)
-              
-              // Accents
-              rust: '#9F3E24',    // PRIMARY ACCENT: Deep Terracotta
-              spruce: '#2F4A42',  // SECONDARY ACCENT: Deep Organic Green (Replaces Moss/Turquoise)
-              
-              // Legacy/Utility
-              black: '#000000',
-            },
-            fontFamily: {
-              // Reverted to Anton for that blocky, modern rock feel
-              display: ['Anton', 'sans-serif'],
-              sans: ['Inter', 'sans-serif'],
-              serif: ['EB Garamond', 'serif'], // kept only for small italic accents
-            },
-            backgroundImage: {
-              'noise': "url('https://grainy-gradients.vercel.app/noise.svg')",
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #E5D8C8; /* paper */
-        color: #181615; /* ink */
-        overflow-x: hidden;
-      }
-      /* Cinematic Grain Overlay */
-      .bg-grain {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 50;
-        opacity: 0.12; 
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        mix-blend-mode: multiply;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      .animate-enter {
-        animation: enter 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        opacity: 0;
-      }
-      @keyframes enter {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      ::selection {
-        background-color: #9F3E24; /* Rust */
-        color: #F2EBE3; /* White */
-      }
-    </style>
-  <script type="importmap">
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drew Bordeaux</title>
+<meta name="description" content="Drew Bordeaux is an artist and creative director who builds worlds out of sound, image, and identity.">
+<link rel="canonical" href="https://www.drewbordeaux.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drew Bordeaux">
+<meta property="og:title" content="Drew Bordeaux">
+<meta property="og:description" content="Singer-songwriter, record producer and creative director. New album, Dust Between Galaxies.">
+<meta property="og:url" content="https://www.drewbordeaux.com/">
+<meta property="og:image" content="https://res.cloudinary.com/diduw1fmf/image/upload/c_fill,g_face,w_1200,h_630,f_jpg,q_auto/v1769319488/drew-12_nihwq7.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Drew Bordeaux with his guitar">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
 {
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Drew Bordeaux",
+  "url": "https://www.drewbordeaux.com/",
+  "description": "Artist and creative director who builds worlds out of sound, image, and identity.",
+  "jobTitle": ["Singer-songwriter", "Record producer", "Creative director"],
+  "memberOf": { "@type": "Organization", "name": "Recording Academy" },
+  "sameAs": [
+    "https://www.drewimages.studio/",
+    "https://open.spotify.com/artist/3FoGO6FW2T3cffSg7SSjaW",
+    "https://drewbordeaux.bandcamp.com/",
+    "https://www.youtube.com/@drewbordeaux569",
+    "https://www.instagram.com/drewsounds/"
+  ]
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
-  <body>
-    <div class="bg-grain"></div>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+
+<header>
+  <div class="wrap">
+    <span></span>
+    <nav class="mono" id="site-nav">
+      <a href="/#record">Music</a>
+      <a href="/production">Production</a>
+      <a href="/info">Info</a>
+      <a href="/contact">Contact</a>
+      <a href="https://www.drewimages.studio">DrewImages ↗</a>
+    </nav>
+    <button class="menu mono" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_2400/v1769319488/drew-12_nihwq7.jpg" alt="Drew Bordeaux laughing with his guitar" fetchpriority="high">
+  <div class="caption">
+    <h1 class="display name">Drew Bordeaux</h1>
+    <a class="listen mono" href="#record">New album · Dust Between Galaxies · Listen ↓</a>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap record">
+    <img class="cover" src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_1000/v1769322948/dustbetweengalaxies_zbegwm.png" alt="Dust Between Galaxies album cover" loading="lazy">
+    <div>
+      <span class="eyebrow mono">Latest record</span>
+      <h2 class="display">Dust Between Galaxies</h2>
+      <div class="meta mono">2026 · Sudden Flight Records</div>
+      <p>Songs that waited a long time for a proper record. If you only have time for one, start with “Chasing a Sunset.”</p>
+      <div class="row-btns">
+        <a class="btn solid mono" href="https://open.spotify.com/album/1v9uoONPLuYwcpbAq6WFGn">Spotify</a>
+        <a class="btn mono" href="https://music.apple.com/us/album/dust-between-galaxies/6786445061">Apple Music</a>
+      </div>
+      <form class="signup">
+        <input type="hidden" name="access_key" value="361b8626-f974-415a-b9f4-bc0871537fec">
+        <input type="hidden" name="subject" value="New music sign-up from DrewBordeaux.com">
+        <input type="hidden" name="from_name" value="drewbordeaux.com">
+        <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="mono" for="signup-email">A note when there’s new music</label>
+        <input id="signup-email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="btn mono" type="submit">Sign up</button>
+        <span class="form-error mono">That didn’t go through. Please try again.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="rule">
+  <div class="wrap">
+    <div class="together-head">
+      <h2 class="display">Working together</h2>
+    </div>
+
+    <div class="doors">
+      <div class="door">
+        <span class="eyebrow mono">Records</span>
+        <div class="covers">
+          <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_160/v1769329708/lostandfoundcover_orff3l.png" alt="Lost & Found by Becki Davis" loading="lazy">
+          <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_160/v1769329702/somekindofway_hfscay.png" alt="Some Kind of Way by Pam Hervey" loading="lazy">
+          <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_160/v1769329703/halo_nbhm0x.png" alt="Halo by Vanessa Silberman" loading="lazy">
+          <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_160/v1769329704/july_ktoyqj.png" alt="July by Becki Davis" loading="lazy">
+        </div>
+        <h3>Production</h3>
+        <p>For songwriters and bands, from voice-and-guitar sketches to finished albums. Most projects start with one song.</p>
+        <a class="arrow-link mono" href="/production">Production →</a>
+      </div>
+      <div class="door">
+        <span class="eyebrow mono">Film &amp; TV</span>
+        <h3>Score and music supervision</h3>
+        <p>Original music and music supervision for documentary film.</p>
+        <a class="arrow-link mono" href="/production#film">Film &amp; TV →</a>
+      </div>
+      <div class="door">
+        <span class="eyebrow mono">Live</span>
+        <h3>Shows and private events</h3>
+        <p>Solo, duo or full band.</p>
+        <a class="arrow-link mono" href="/contact?type=live">Book a show →</a>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="frame">
+        <img src="https://res.cloudinary.com/diduw1fmf/image/upload/f_auto,q_auto,w_1200/v1768230293/Cyrille_Green_ug4lzg.png" alt="Cyrille Aimée, photographed by DrewImages" loading="lazy">
+        <span class="credit-caption mono">Cyrille Aimée · DrewImages</span>
+      </div>
+      <div>
+        <span class="eyebrow mono">Visual identity</span>
+        <h3 class="display">Art direction and photography</h3>
+        <p>Art director and photographer on Nicole Zuraitis’s <em>The Devil I Knew</em>: the cover, the press images and five chapters of lyric visuals. The studio side of the work lives at DrewImages.</p>
+        <div class="row-btns">
+          <a class="btn solid mono" href="https://www.drewimages.studio">See the work ↗</a>
+          <a class="arrow-link mono" href="/contact?type=visual">Or start a conversation →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rule">
+  <div class="wrap">
+    <span class="eyebrow mono">Watch</span>
+    <a class="video" href="https://youtu.be/PdLSq1BqABg">
+      <img src="https://img.youtube.com/vi/PdLSq1BqABg/maxresdefault.jpg" alt="Drew Bordeaux performing Use Me live at 12 Grapes" loading="lazy">
+      <span class="play"><span>▶</span><span class="mono">“Use Me” (Bill Withers) · Live at 12 Grapes</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="rule">
+  <div class="wrap closing">
+    <h2 class="display">Let’s talk.</h2>
+    <p>Tell me about the project and where you are with it.</p>
+    <a class="btn solid mono" href="/contact">Start a conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="wordmark" href="/">Drew Bordeaux</a>
+      <div class="mono" style="letter-spacing:.08em">© 2026 Drew Bordeaux</div>
+    </div>
+    <div class="mono">
+      <a href="/#record">Music</a>
+      <a href="/production">Production</a>
+      <a href="/info">Info</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="mono">
+      <a href="https://www.drewimages.studio">DrewImages.studio ↗</a>
+      <a href="https://drewbordeaux.substack.com">Signal to Noise ↗</a>
+      <a href="https://suddenflightrecords.com">Sudden Flight Records ↗</a>
+      <a href="https://www.instagram.com/drewsounds/">Instagram ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
 </body>
 </html>

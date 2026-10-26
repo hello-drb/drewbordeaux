@@ -1,5 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/producer", "destination": "/production", "permanent": true },
+    { "source": "/bio", "destination": "/info", "permanent": true },
+    { "source": "/press", "destination": "/info", "permanent": true },
+    { "source": "/music", "destination": "/", "permanent": true },
+    { "source": "/live", "destination": "/contact?type=live", "permanent": true },
+    { "source": "/visuals", "destination": "https://www.drewimages.studio", "permanent": true },
+    { "source": "/styleguide", "destination": "/", "permanent": true }
   ]
 }
