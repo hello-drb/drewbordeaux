@@ -187,6 +187,8 @@
 /* Info */
 .info { display: grid; grid-template-columns: minmax(280px, 440px) 1fr; gap: 80px; align-items: start; }
 .info img { border: 1px solid var(--lines); }
+figure.photo { margin: 0; }
+figure.photo figcaption { color: var(--soft); margin-top: 12px; }
 .info .bio p { margin-bottom: 20px; max-width: 32em; }
 .info .bio p.now { font-style: italic; }
 .elsewhere { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--lines); max-width: 32em; }
