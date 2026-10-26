@@ -77,6 +77,8 @@
   .hero h1.name { font-size: clamp(48px, 6.4vw, 96px); line-height: 1; letter-spacing: -.015em; margin-bottom: 22px; }
   .hero .listen { color: #EDEBE3; text-decoration: none; border-bottom: 1px solid rgba(237,235,227,.5); padding-bottom: 4px; }
   .hero .listen:hover { border-color: #EDEBE3; }
+  .hero-credit { position: absolute; z-index: 2; right: 48px; bottom: 24px; font-size: 10px; color: rgba(237,235,227,.65); }
+  @media (max-width: 860px) { .hero-credit { right: 22px; bottom: 12px; } }
 
   /* Latest record */
   .record { display: grid; grid-template-columns: minmax(280px, 480px) 1fr; gap: 80px; align-items: center; }
